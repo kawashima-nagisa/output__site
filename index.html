@@ -8,43 +8,76 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
 
   <title>output用のサイト</title>
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__container">
-      <img class="header__logo" src="img/logo.svg" alt="">
-      <ul class="header__list">
-        <li class="header__item"><a href="">Room</a></li>
-        <li class="header__item"><a href="">Experience</a></li>
-        <li class="header__item"><a href="">Food</a></li>
-        <li class="header__item"> <a href="">Access</a></li>
-        <li class="header__item"><a href="">Reserve</a></li>
-        <li class="header__item"><a href=""><i class="fa-brands fa-instagram fa-bounce"></i></a></li>
-
-      </ul>
-
-    </div>
+  <div class="header__wrapper ">
+    <header class="header">
+      <div class="header__container">
+        <object id="svg-object" type="image/svg+xml" data="img/logo.svg"></object>
 
 
-  </header>
+        <ul class="header__list">
+          <li class="header__item"><a href="">Room</a></li>
+          <li class="header__item"><a href="">Experience</a></li>
+          <li class="header__item"><a href="">Food</a></li>
+          <li class="header__item"> <a href="">Access</a></li>
+          <li class="header__item"><a href="">Reserve</a></li>
+          <li class="header__item"><a href=""><i class="fa-brands fa-instagram fa-bounce"></i></a></li>
 
-  <section class="slide">
-    <img class="slide__img" src="img/slide1.jpg" alt="">
-    <div class="slide__background"></div>
-    <div class="slide__sentence">
-      <h1>親さが、<br>深まる家</h1>
-      <p>海と森のあいだ、海を見渡す高台に佇む<br>
-        温泉付プライベートホテル「PLAYLIVING IZU」</p>
-    </div>
-  </section>
+        </ul>
 
-  <section class="welcome">
+      </div>
+
+
+    </header>
+
+    <section class="slide element">
+
+      <div class="swiper">
+        <div class="slider swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+            </div>
+            <div class="swiper-slide slide2">
+            </div>
+            <div class="swiper-slide slide3">
+            </div>
+
+          </div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+      <!-- サムネイル -->
+      <div class="swiper-thumbnail swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide1">
+          </div>
+          <div class="swiper-slide slide2">
+          </div>
+          <div class="swiper-slide slide3">
+          </div>
+        </div>
+      </div>
+      <div class="slide__sentence">
+        <h1>親さが、<br>深まる家</h1>
+        <p>海と森のあいだ、海を見渡す高台に佇む<br>
+          温泉付プライベートホテル「PLAYLIVING IZU」</p>
+      </div>
+    </section>
+
+  </div>
+
+
+
+  <section class="welcome element">
     <div class="welcome__item">
-      <img class="item__img" src="img/welcome1.png" alt="">
+      <img class="item__img" src="img/welcome1.webp" alt="">
     </div>
     <div class="welcome__item">
       <p>たった数日、<br>
@@ -67,11 +100,169 @@
 
     </div>
     <div class="welcome__item">
-      <img class="item__img" src="img/welcome2.png" alt="">
+      <img class="item__img" src="img/welcome2.webp" alt="">
     </div>
 
 
   </section>
+  <section class="movie element">
+    <iframe src="https://player.vimeo.com/video/821643925?autoplay=1&amp;loop=1&amp;background=1" width="500"
+      height="281" style="border:2px solid #fff; box-sizing: border-box;" frameborder="0" webkitallowfullscreen=""
+      mozallowfullscreen="" allowfullscreen="" allow="autoplay"></iframe>
+
+  </section>
+  <section class="room ">
+    <div class="room-wrapper element">
+      <div class="room-item">
+        <h2>Room</h2>
+        <p>吹き抜けの高い天井、大きな窓。<br>
+          自然の近くで過ごす開放的な空間。
+        </p>
+        <p>View More</p>
+      </div>
+    </div>
+    <div class="room__content element">
+      <div class="room__content-item">
+        <img class="effect-flash" src="img/room-slide.webp" alt="">
+        <img class="effect-flash" src="img/room-slide2.webp" alt="">
+        <img class="effect-flash" src="img/room-silde3.webp" alt="">
+
+      </div>
+      <div class="room__content-item">
+        <img class="effect-flash" src="img/room-slide.webp" alt="">
+        <img class="effect-flash" src="img/room-slide2.webp" alt="">
+        <img class="effect-flash" src="img/room-silde3.webp" alt="">
+
+      </div>
+      <div class="room__content-item">
+        <img class="effect-flash" src="img/room-slide.webp" alt="">
+        <img class="effect-flash" src="img/room-slide2.webp" alt="">
+        <img class="effect-flash" src="img/room-silde3.webp" alt="">
+
+      </div>
+      <div class="room__content-item">
+        <img class="effect-flash" src="img/room-slide.webp" alt="">
+        <img class="effect-flash" src="img/room-slide2.webp" alt="">
+        <img class="effect-flash" src="img/room-silde3.webp" alt="">
+
+      </div>
+
+    </div>
+
+
+  </section>
+  <section class="experience element">
+    <div class="experience-wrapper">
+      <div class="experience-item">
+        <h2>Experience</h2>
+        <p>アウトドアでも、インドアでも。<br>
+          その時々の気分に合わせて楽しめる。
+        </p>
+        <p>View More</p>
+      </div>
+    </div>
+    <div class="experience-contents">
+      <img src="img/s-712x1256_v-fms_webp_ce80a178-922b-4cda-b04b-a7b0cde3b0ae-1.webp" alt="" class="contents-img-left">
+      <img src="img/s-1332x808_v-fms_webp_3c60e066-0e44-463b-bf09-4be0ba505bea.webp" alt="" class="contents-img-right">
+    </div>
+    </div>
+  </section>
+  <section class="food element">
+    <div class="food-wrapper">
+      <div class="food-item">
+        <h2>Food</h2>
+        <p>バーベキューガスグリルや、<br>
+          地域の食材を使ったオリジナルミールキットをご用意。
+        </p>
+        <p>View More</p>
+      </div>
+    </div>
+    <div class="food-content">
+      <img src="img/s-2044x996_v-frms_webp_2358aadd-77d4-4116-888a-25c9491bb231.webp" alt="">
+    </div>
+    <div class="food-contents">
+      <img src="img/renkon.webp" alt="" class="contents-img-left">
+      <img src="img/s-2400x1500_v-frms_webp_a1008bb6-83ec-442a-ad53-17b3068f9450_middle.webp" alt=""
+        class="contents-img-right">
+    </div>
+  </section>
+  <section class="access element">
+    <div class="access-wrapper">
+      <div class="access-item">
+        <h2>Access</h2>
+        <p>関東からも関西からもほどよいアクセスで<br>
+          仲間と集う。
+        </p>
+        <p>View More</p>
+      </div>
+    </div>
+    <div class="access-contents">
+      <img src="img/s-2400x1715_v-frms_webp_ff0f9707-2dc6-4bf4-bcf3-0c385e6f5aac_middle.webp" alt=""
+        class="contents-img-left myClass">
+      <img src="img/s-1332x1041_v-fms_webp_73f30c1e-36f1-42c2-856a-b2a6acf8e925.webp" alt=""
+        class="contents-img-right myClass">
+    </div>
+
+  </section>
+  <section class="reserve element">
+    <div class="reserve-wrapper">
+      <div class="reserve-item">
+        <h2>Reserve</h2>
+        <p>客室・料金確認やご予約はこちらから
+        </p>
+        <p>View More</p>
+      </div>
+    </div>
+
+  </section>
+  <!-- <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      // デモ説明のためのデフォルト設定
+      gsap.defaults({
+        repeat: -1, // 無限に繰り返し
+        repeatDelay: 0.5, // 繰り返し時に0.5秒の待機
+      });
+
+      // たくさんの矩形を配置
+      for (let i = 0; i < 80; i++) {
+        const rect = document.createElement("div");
+        rect.classList.add("rect");
+        document.body.appendChild(rect);
+
+        rect.style.left = `${i}vw`;
+      }
+
+      // 画面下部に落下
+      gsap.to(".rect", {
+        y: "100vh",
+        duration: 5,
+        ease: "bounce.out",
+        stagger: {
+          each: 0.04, // ばらす間隔（秒）
+          from: "random", // ランダムに開始
+        },
+      });
+    });
+  </script> -->
+  <style>
+    body {
+      /* margin: 0;
+      padding: 0; */
+      background: #bdbbbb;
+      /* overflow: hidden; */
+    }
+  </style>
+
+
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
 
 </body>
 
