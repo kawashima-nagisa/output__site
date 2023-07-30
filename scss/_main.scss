@@ -634,11 +634,7 @@
 	aspect-ratio: 4/2;
 	width: 80%;
 	margin-left: auto;
-	transform: perspective(500px) rotateX(0deg) rotateY(0deg);
-	transition: transform 1s;
-	&:hover {
-		transform: perspective(500px) rotateX(20deg) rotateY(20deg);
-	}
+
 	&-item {
 		color: #ffffff;
 	}
