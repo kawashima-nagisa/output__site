@@ -1,3 +1,54 @@
+button {
+	appearance: none;
+	border: 1px solid white;
+	// color: white;
+
+	user-select: none;
+	padding: 8px 16px;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+button:hover {
+	background: white;
+}
+
+.stalker {
+	width: 10px;
+	height: 10px;
+	display: block;
+	border: 2px solid #e4aaaa;
+	position: fixed;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	@media (prefers-color-scheme: dark) {
+		border: 2px solid #fff;
+	}
+}
+
+.container {
+	position: absolute;
+}
+
+.rect {
+	width: 1vw;
+	height: 1vw;
+	position: absolute;
+	background-color: white;
+	top: 0;
+	left: 0;
+	mix-blend-mode: screen;
+	border-radius: 50%;
+}
+body {
+	background: #dcdbdbdc;
+	@media (prefers-color-scheme: dark) {
+		background: #2c2c2c;
+	}
+}
+
 .swiper {
 	&::after {
 		content: "";
@@ -116,7 +167,7 @@
 	position: fixed;
 	z-index: 100;
 	height: 100vh;
-	background: #fff;
+	background: #908f8f;
 	opacity: 0.3;
 
 	width: 20%;
@@ -126,9 +177,21 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
-		gap: 50vh;
+		// gap: 50vh;
+		gap: 30vh;
 		width: 80%;
 		margin: 0 auto;
+		object:first-child {
+			@media (prefers-color-scheme: dark) {
+				display: none;
+			}
+		}
+		.header-dk {
+			display: none;
+			@media (prefers-color-scheme: dark) {
+				display: block;
+			}
+		}
 	}
 
 	&__list {
@@ -139,15 +202,20 @@
 		width: auto;
 	}
 	&__item {
+		pointer-events: all;
+		margin-bottom: 20px;
 		a {
 			display: inline-block;
-			color: #333;
+			color: #000;
 			font-family: var(--s-font-eeb9be6a);
 			font-size: 13px;
 			font-weight: 400;
 			height: auto;
 			letter-spacing: 0.02em;
 			line-height: 2;
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 		}
 	}
 }
@@ -229,6 +297,9 @@
 		font-weight: 400;
 		letter-spacing: 0.06em;
 		line-height: 2;
+		@media (prefers-color-scheme: dark) {
+			color: #fff;
+		}
 	}
 	&__item:nth-child(3) {
 		.item__img {
@@ -271,6 +342,9 @@
 			text-align: right;
 			width: auto;
 			max-width: 100%;
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 		}
 		p {
 			color: #404040;
@@ -285,6 +359,9 @@
 			transition-duration: 2000ms;
 			width: auto;
 			max-width: calc(100% - -7px);
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 			&:last-child {
 				color: #404040;
 				font-family: var(--s-font-ff85ed5b);
@@ -299,6 +376,9 @@
 				display: flex;
 				justify-content: flex-end;
 				align-items: center;
+				@media (prefers-color-scheme: dark) {
+					color: #fff;
+				}
 				&::before {
 					display: inline-block;
 					content: "";
@@ -307,6 +387,9 @@
 					background-color: #797878;
 					margin-right: 5px;
 					transition: width 0.5s ease-in-out; // Add this
+					@media (prefers-color-scheme: dark) {
+						background-color: #fff;
+					}
 				}
 				&:hover::before {
 					width: 0;
@@ -367,6 +450,7 @@
 	background: url("../img/section-room2.svg");
 	background-repeat: no-repeat;
 	background-position: left 80%;
+
 	&-contents {
 		display: flex;
 		justify-content: space-between;
@@ -402,6 +486,9 @@
 			text-align: right;
 			width: auto;
 			max-width: 100%;
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 		}
 		p {
 			color: #404040;
@@ -416,6 +503,9 @@
 			transition-duration: 2000ms;
 			width: auto;
 			max-width: calc(100% - -7px);
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 
 			&:last-child {
 				color: #404040;
@@ -431,6 +521,9 @@
 				display: flex;
 				justify-content: flex-end;
 				align-items: center;
+				@media (prefers-color-scheme: dark) {
+					color: #fff;
+				}
 
 				&::before {
 					display: inline-block;
@@ -440,6 +533,9 @@
 					background-color: #797878;
 					margin-right: 5px;
 					transition: width 0.5s ease-in-out; // Add this
+					@media (prefers-color-scheme: dark) {
+						background-color: #fff;
+					}
 				}
 				&:hover::before {
 					width: 0;
@@ -453,6 +549,9 @@
 	background-repeat: no-repeat;
 	background-position: left 93%;
 	padding-bottom: 450px;
+	@media (prefers-color-scheme: dark) {
+		background: url("../img/section-room3-dk.svg");
+	}
 
 	&-wrapper {
 		height: max(20%, 575px);
@@ -470,6 +569,9 @@
 			text-align: right;
 			width: auto;
 			max-width: 100%;
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 		}
 		p {
 			color: #404040;
@@ -484,6 +586,9 @@
 			transition-duration: 2000ms;
 			width: auto;
 			max-width: calc(100% - -7px);
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 			&:last-child {
 				color: #404040;
 				font-family: var(--s-font-ff85ed5b);
@@ -498,6 +603,9 @@
 				display: flex;
 				justify-content: flex-end;
 				align-items: center;
+				@media (prefers-color-scheme: dark) {
+					color: #fff;
+				}
 				&::before {
 					display: inline-block;
 					content: "";
@@ -506,6 +614,9 @@
 					background-color: #797878;
 					margin-right: 5px;
 					transition: width 0.5s ease-in-out; // Add this
+					@media (prefers-color-scheme: dark) {
+						background-color: #fff;
+					}
 				}
 				&:hover::before {
 					width: 0;
@@ -522,6 +633,9 @@
 			width: 70%;
 			display: block;
 			margin-left: auto;
+			@media (prefers-color-scheme: dark) {
+				filter: brightness(2);
+			}
 		}
 	}
 	&-contents {
@@ -560,6 +674,9 @@
 			text-align: right;
 			width: auto;
 			max-width: 100%;
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 		}
 		p {
 			color: #404040;
@@ -574,6 +691,9 @@
 			transition-duration: 2000ms;
 			width: auto;
 			max-width: calc(100% - -7px);
+			@media (prefers-color-scheme: dark) {
+				color: #fff;
+			}
 
 			&:last-child {
 				color: #404040;
@@ -589,6 +709,9 @@
 				display: flex;
 				justify-content: flex-end;
 				align-items: center;
+				@media (prefers-color-scheme: dark) {
+					color: #fff;
+				}
 
 				&::before {
 					display: inline-block;
@@ -598,6 +721,9 @@
 					background-color: #797878;
 					margin-right: 5px;
 					transition: width 0.5s ease-in-out; // Add this
+					@media (prefers-color-scheme: dark) {
+						background-color: #fff;
+					}
 				}
 				&:hover::before {
 					width: 0;
@@ -634,6 +760,7 @@
 	aspect-ratio: 4/2;
 	width: 80%;
 	margin-left: auto;
+	transition: all 0.8s ease;
 
 	&-item {
 		color: #ffffff;

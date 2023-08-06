@@ -71,3 +71,162 @@ window.addEventListener("load", function () {
 		});
 	}
 });
+// エリア要素をすべて取得
+const areas = document.querySelectorAll(".watch-hover div");
+
+// 各エリアにイベントリスナーを追加
+areas.forEach((area, index) => {
+	area.addEventListener("mouseover", function () {
+		const bg = document.querySelector(".bg");
+
+		// エリアのindexによって背景位置を変更
+		switch (index) {
+			case 0:
+				bg.style.transform = "translate(-1rem, -1rem)";
+				break;
+			case 1:
+				bg.style.transform = "translate(0rem, -1rem)";
+				break;
+			case 2:
+				bg.style.transform = "translate(1rem, -1rem)";
+				break;
+			case 3:
+				bg.style.transform = "translate(-1rem, -2rem)";
+				break;
+			case 4:
+				bg.style.transform = "translate(0rem, -2rem)";
+				break;
+			case 5:
+				bg.style.transform = "translate(1rem, -2rem)";
+				break;
+			case 6:
+				bg.style.transform = "translate(-1rem, -3rem)";
+				break;
+			case 7:
+				bg.style.transform = "translate(0rem, -3rem)";
+				break;
+			case 8:
+				bg.style.transform = "translate(1rem, -3rem)";
+				break;
+		}
+	});
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+	// プラグインを登録
+	gsap.registerPlugin(MotionPathPlugin);
+
+	// たくさんの矩形を配置
+	for (let i = 0; i < 50; i++) {
+		const rect = document.createElement("div");
+		rect.classList.add("rect");
+		document.querySelector(".container").appendChild(rect);
+	}
+
+	// 一緒くたに移動
+	const list = gsap.utils.toArray(".rect");
+	list.forEach((rect, offsetIndex) => {
+		gsap.fromTo(
+			rect,
+			{
+				x: "100vw",
+				scale: 0.0,
+			},
+			{
+				duration: 1 + Math.random() * 20,
+				repeat: -1,
+				ease: "power1.inOut",
+				x: "-100vw",
+				motionPath: [
+					{ y: (Math.random() - 0.1) * 100 + "vh", scale: 1 },
+					{ y: (Math.random() - 0.9) * 100 + "vh", scale: 3 },
+				],
+				delay: Math.random(),
+			}
+		);
+	});
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+	const stalker = document.querySelector(".stalker");
+	const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+	const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+	const speed = 0.15;
+
+	const xSet = gsap.quickSetter(stalker, "x", "px");
+	const ySet = gsap.quickSetter(stalker, "y", "px");
+
+	window.addEventListener("mousemove", (event) => {
+		const rectSize = 10;
+		mouse.x = event.x - rectSize / 2;
+		mouse.y = event.y - rectSize / 2;
+	});
+
+	gsap.ticker.add(() => {
+		if (mouseLock === true) {
+			return;
+		}
+		const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+
+		// いわゆるイージングの公式
+		pos.x += (mouse.x - pos.x) * dt;
+		pos.y += (mouse.y - pos.y) * dt;
+
+		xSet(pos.x);
+		ySet(pos.y);
+	});
+
+	let mouseLock = false;
+
+	document.querySelectorAll("button").forEach((element) => {
+		element.addEventListener("mouseenter", () => {
+			const rect = element.getBoundingClientRect();
+			mouseLock = true;
+
+			const size = 10;
+			const x = (mouse.x = pos.x = rect.x - size);
+			const y = (mouse.y = pos.y = rect.y - size);
+
+			gsap.to(stalker, {
+				x,
+				y,
+				width: rect.width + size * 2,
+				height: rect.height + size * 2,
+				duration: 0.35,
+				ease: "back.out",
+				overwrite: true,
+			});
+		});
+		element.addEventListener("mouseleave", () => {
+			mouseLock = false;
+
+			gsap.to(stalker, {
+				width: 10,
+				height: 10,
+				duration: 1,
+				ease: "power4.out",
+				overwrite: true,
+			});
+		});
+	});
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	let targetElement = document.querySelector(".reserve"); // ターゲット要素を選択
+
+	targetElement.addEventListener("mouseenter", function () {
+		gsap.to(targetElement, {
+			duration: 0.8,
+			ease: "power2.out",
+			clipPath: "polygon(50% 0, 71% 52%, 53% 100%, 0 100%, 7% 50%, 0 0)",
+		});
+	});
+
+	targetElement.addEventListener("mouseleave", function () {
+		gsap.to(targetElement, {
+			duration: 0.4,
+			ease: "power2.out",
+			clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // これは元の形状に戻すための例です。必要に応じて調整してください。
+		});
+	});
+});

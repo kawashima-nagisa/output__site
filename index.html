@@ -15,31 +15,28 @@
 </head>
 
 <body>
-  <div class="header__wrapper ">
+  <div class="header__wrapper">
     <header class="header">
       <div class="header__container">
         <object id="svg-object" type="image/svg+xml" data="img/logo.svg"></object>
-
-
+        <object class="header-dk" type="image/svg+xml" data="img/logo-dk.svg"
+          media="(prefers-color-scheme: dark)"></object>
         <ul class="header__list">
-          <li class="header__item"><a href="">Room</a></li>
-          <li class="header__item"><a href="">Experience</a></li>
-          <li class="header__item"><a href="">Food</a></li>
-          <li class="header__item"> <a href="">Access</a></li>
-          <li class="header__item"><a href="">Reserve</a></li>
-          <li class="header__item"><a href=""><i class="fa-brands fa-instagram fa-bounce"></i></a></li>
+          <li class="header__item"><button><a href="">Room</a></button></li>
+          <li class="header__item"><button><a href="">Experience</a></button></li>
+          <li class="header__item"><button><a href="">Food</a></button></li>
+          <li class="header__item"><button><a href="">Access</a></button></li>
+          <li class="header__item"><button><a href="">Reserve</a></button></li>
+          <li class="header__item"><button><a href=""><i class="fa-brands fa-instagram fa-bounce"></i></a></button>
+          </li>
+          <div class="stalker"></div>
 
         </ul>
-
       </div>
-
-
     </header>
-
-    <section class="slide element">
-
+    <section class="slide element ">
       <div class="swiper">
-        <div class="slider swiper-container">
+        <div class="slider swiper-container ">
           <div class="swiper-wrapper">
             <div class="swiper-slide slide1">
             </div>
@@ -47,7 +44,6 @@
             </div>
             <div class="swiper-slide slide3">
             </div>
-
           </div>
           <!-- <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div> -->
@@ -64,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="slide__sentence">
+      <div class="slide__sentence ">
         <h1>親さが、<br>深まる家</h1>
         <p>海と森のあいだ、海を見渡す高台に佇む<br>
           温泉付プライベートホテル「PLAYLIVING IZU」</p>
@@ -72,10 +68,12 @@
     </section>
 
   </div>
+  <div class="container">
+    <div class="rect"></div>
+  </div>
 
+  <section class="welcome element ">
 
-
-  <section class="welcome element">
     <div class="welcome__item">
       <img class="item__img" src="img/welcome1.webp" alt="">
     </div>
@@ -215,48 +213,106 @@
     </div>
 
   </section>
-  <!-- <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      // デモ説明のためのデフォルト設定
-      gsap.defaults({
-        repeat: -1, // 無限に繰り返し
-        repeatDelay: 0.5, // 繰り返し時に0.5秒の待機
-      });
 
-      // たくさんの矩形を配置
-      for (let i = 0; i < 80; i++) {
-        const rect = document.createElement("div");
-        rect.classList.add("rect");
-        document.body.appendChild(rect);
+  <section class="animate-hover">
+    <div class="baloon">
+      <h2>text</h2>
+      <p>texttexttexttexttexttexttexttext</p>
+      <p>View More</p>
+    </div>
+    <div class="bg-img">
+      <img src="/img/photo-1505144808419-1957a94ca61e.png" alt="" class="bg">
+      <div class="watch-hover">
+        <div class="area-1"></div>
+        <div class="area-2"></div>
+        <div class="area-3"></div>
+        <div class="area-4"></div>
+        <div class="area-5"></div>
+        <div class="area-6"></div>
+        <div class="area-7"></div>
+        <div class="area-8"></div>
+        <div class="area-9"></div>
+      </div>
+    </div>
+  </section>
 
-        rect.style.left = `${i}vw`;
+  <style>
+    .animate-hover {
+      overflow: hidden;
+      margin: 200px 0px;
+      transform: translateX(38%);
+      overflow: hidden;
+    }
+
+    header {
+      pointer-events: none;
+    }
+
+    section {
+      position: relative;
+      width: 80%;
+      margin-left: auto;
+    }
+
+    .baloon {
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      transform: translate(-40%, -30%);
+      font-size: 16px;
+      font-weight: 400;
+      height: auto;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      text-align: right;
+      width: auto;
+      max-width: 100%;
+      background: #fff;
+      opacity: .3;
+      padding: 16px;
+      mix-blend-mode: overlay;
+
+      @media (prefers-color-scheme: dark) {
+        mix-blend-mode: difference;
+
       }
 
-      // 画面下部に落下
-      gsap.to(".rect", {
-        y: "100vh",
-        duration: 5,
-        ease: "bounce.out",
-        stagger: {
-          each: 0.04, // ばらす間隔（秒）
-          from: "random", // ランダムに開始
-        },
-      });
-    });
-  </script> -->
-  <style>
-    body {
-      /* margin: 0;
-      padding: 0; */
-      background: #bdbbbb;
-      /* overflow: hidden; */
+    }
+
+    .bg-img {
+      overflow: hidden;
+    }
+
+    .bg {
+      display: block;
+      transition: transform 0.3s ease-out;
+      width: 100%;
+    }
+
+    .baloon {
+      width: 300px;
+      z-index: 1;
+    }
+
+    .watch-hover {
+      display: grid;
+      grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
   </style>
 
 
 
+
   <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
