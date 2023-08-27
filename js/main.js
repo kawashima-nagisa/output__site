@@ -42,10 +42,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("img.myClass", {
 	scrollTrigger: {
-		trigger: "img.myClass", // スクロールをトリガーにする要素を指定します
+		trigger: "img.myClass", // スクロールをトリガーにする要素を指定
 		start: "top 100%", // スタート位置を遠くに設定
 		end: "bottom 0%", // エンド位置を遠くに設定
-		scrub: true, // スクロール位置とアニメーションの進行を連動させます
+		scrub: true, // スクロール位置とアニメーションの進行を連動
 	},
 	delay: 4,
 	duration: 7,
@@ -228,5 +228,25 @@ document.addEventListener("DOMContentLoaded", function () {
 			ease: "power2.out",
 			clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // これは元の形状に戻すための例です。必要に応じて調整してください。
 		});
+	});
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	const images = document.querySelectorAll(".welcome__item");
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("active");
+				// 監視している要素がビューポートと交差している場合の処理
+			} else {
+				entry.target.classList.remove("active");
+				// 監視している要素がビューポートと交差していない場合の処理
+			}
+		});
+	});
+
+	images.forEach((image) => {
+		observer.observe(image);
 	});
 });

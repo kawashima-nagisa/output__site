@@ -1,3 +1,21 @@
+// @font-face {
+// 	font-family: "Zen Old Mincho";
+// 	src: url("path/to/font.woff2") format("woff2-variations");
+// 	font-weight: 100 900; // 100から900までのウェイトをカバーする場合
+// }
+@font-face {
+	font-family: "Roboto Flex";
+	src: url("./fonts/RobotoFlex[slnt,wdth,wght,opsz].ttf")
+		format("truetype-variations");
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
+}
+
+body {
+	font-family: "Zen Old Mincho", sans-serif;
+	font-variation-settings: "wght" 400, "wdth" 50, "GRAD" 1; // ここでウェイトを400に設定
+}
+
 button {
 	appearance: none;
 	border: 1px solid white;
@@ -274,13 +292,25 @@ body {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
+
 	&__item:first-child {
 		transform: translateY(29%);
-		.item__img {
+		opacity: 0;
+		width: 1%;
+		&.active {
+			opacity: 1;
 			width: 85%;
-
+			transition: opacity 1s, width 2s;
+			.item__img {
+				transform: scale(1);
+				transition: 1s ease-out;
+			}
+		}
+		.item__img {
+			// width: 85%;
 			margin-left: auto;
 			display: block;
+			transform: scale(1.6);
 		}
 	}
 
@@ -289,23 +319,49 @@ body {
 		flex-direction: column;
 		justify-content: space-between;
 		transform: translateY(10%);
-		font-family: "Zen Old Mincho", serif;
+		// font-family: "Zen Old Mincho", serif;
 		width: 70%;
 		margin: 0 auto;
 		color: #404040;
 		font-size: 15px;
-		font-weight: 400;
+		// font-weight: 400;
 		letter-spacing: 0.06em;
 		line-height: 2;
+		font-family: "Roboto Flex", sans-serif;
+		font-variation-settings: "wght" 400, "wdth" 90, "GRAD" 1;
+		animation: width-animation 5s ease infinite alternate;
+
+		@keyframes width-animation {
+			from {
+				font-variation-settings: "wght" 400, "wdth" 50, "GRAD" 1;
+			}
+			to {
+				font-variation-settings: "wght" 400, "wdth" 151, "GRAD" 1;
+			}
+		}
+
 		@media (prefers-color-scheme: dark) {
 			color: #fff;
 		}
 	}
 	&__item:nth-child(3) {
-		.item__img {
+		transform: scale(1.6);
+		opacity: 0;
+		width: 1%;
+		&.active {
+			opacity: 1;
 			width: 85%;
+			transition: opacity 1s, width 2s;
+			.item__img {
+				transform: scale(1);
+				transition: 1s ease-out;
+			}
+		}
+		.item__img {
+			// width: 85%;
 			margin-left: auto;
 			display: block;
+			transform: scale(1.6);
 		}
 	}
 }
@@ -551,6 +607,9 @@ body {
 	padding-bottom: 450px;
 	@media (prefers-color-scheme: dark) {
 		background: url("../img/section-room3-dk.svg");
+		background-repeat: no-repeat;
+		background-position: left 93%;
+		padding-bottom: 450px;
 	}
 
 	&-wrapper {
