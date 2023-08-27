@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		gsap.to(targetElement, {
 			duration: 0.4,
 			ease: "power2.out",
-			clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // これは元の形状に戻すための例です。必要に応じて調整してください。
+			clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 		});
 	});
 });
